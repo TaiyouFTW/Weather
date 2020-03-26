@@ -1,0 +1,81 @@
+::ng-deep .my-custom-spin {
+    animation: fa-spin 0.75s infinite linear;
+  }
+  
+  .loading {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 5000; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0); /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
+  }
+  
+  .loadingCenter {
+      position: absolute;
+      margin: 0;
+      top: 50%;
+      left: 50%;
+      margin: -53px 0px 0px -30px;
+      font-size: 2rem;
+  }
+  
+  .spinner {
+      -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+      -webkit-animation-iteration-count: infinite; /* Safari 4.0 - 8.0 */
+      animation-name: example;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+  }
+  
+  .showLoading {
+      display: block !important;
+  }
+  
+  @keyframes example {
+      0% {
+          color: #de3e35;
+      }
+      20% {
+          color: #f7c223;
+      }
+      40% {
+          color: #349a1b;
+      }
+      60% {
+          color: #4285f4;
+      }
+      80% {
+          color: #df42f4;
+      }
+      100% {
+          color: #de3e35;
+      }
+  }
+  
+  @-webkit-keyframes example {
+      0% {
+          color: #de3e35;
+      }
+      20% {
+          color: #f7c223;
+      }
+      40% {
+          color: #349a1b;
+      }
+      60% {
+          color: #4285f4;
+      }
+      80% {
+          color: #df42f4;
+      }
+      100% {
+          color: #de3e35;
+      }
+  }
+  
