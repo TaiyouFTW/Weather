@@ -1,0 +1,22 @@
+[
+    {
+        "name": "São Paulo",
+        "woeid": "455827"
+    },
+    {
+        "name": "Rio de Janeiro",
+        "woeid": "455825"
+    },
+    {
+        "name": "Salvador",
+        "woeid": "455826"
+    },
+    {
+        "name": "Nova Iorque",
+        "woeid": "2459115"
+    },
+    {
+        "name": "Lisboa",
+        "woeid": "742676"
+    }
+]

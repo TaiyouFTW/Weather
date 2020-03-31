@@ -6,6 +6,7 @@
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/card";
 @import "reset";
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "themes";
@@ -21,4 +22,11 @@ body {
 
 .container {
     overflow: hidden;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+p {
+    font-weight: bold;
 }

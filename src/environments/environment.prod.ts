@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  urlApi: ''
+  urlApi: '',
+  apiKey: 'INSERT_API_KEY_HERE'
 };

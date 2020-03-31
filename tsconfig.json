@@ -9,6 +9,7 @@
       "@modules/*": ["app/modules/*"],
       "@shared/*": ["app/shared/*"]
     },
+    "resolveJsonModule": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,

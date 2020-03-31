@@ -9,9 +9,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$candy-app-primary: mat-palette($mat-deep-purple);
-$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
-$candy-app-foreground: mat-palette($mat-deep-orange, 500);
+$candy-app-primary: mat-palette($mat-amber);
+$candy-app-accent: mat-palette($mat-grey, 900);
 
 // The warn palette is optional (defaults to red).
 $candy-app-warn: mat-palette($mat-red);
@@ -23,3 +22,25 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($candy-app-theme);
+
+
+$sun-moon-primary: mat-palette($mat-amber);
+$sun-moon-accent: mat-palette($mat-deep-purple, 600);
+$sun-moon-warn: mat-palette($mat-red);
+
+$sun-moon-theme: mat-light-theme($sun-moon-primary, $sun-moon-accent, $sun-moon-warn);
+
+@mixin sun-moon-theme($sun-moon-theme) {
+
+    $primary: map-get($sun-moon-theme, primary);
+    $accent: map-get($sun-moon-theme, accent);
+
+    .my-sun {
+        color: mat-color($primary, 600) !important;
+    }
+    .my-moon {
+        color: mat-color($accent, 600) !important;
+    }
+}
+
+@include sun-moon-theme($sun-moon-theme);

@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row pb-3">
+        <div class="col-4">
+            <div class="card shadow-sm border-0 my-card">
+                <h1 class="text-center mb-0 pt-5">{{weather.title}}</h1>
+                <small class="text-center font-weight-bold">{{todayWeather.applicable_date | date: 'dd/MM/yyyy'}}</small>
+                <h1 class="text-center pt-5 pl-3" style="font-size: 5rem;">{{todayWeather.the_temp | number:'1.0-0'}}º</h1>
+                <!-- <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <p class="text-center mb-0">Min</p>
+                            <p class="text-center">{{todayWeather.min_temp | number:'1.1-2'}}</p>
+                        </div>
+                        <div class="col-4">
+                            <h1 class="text-center">
+                                <fa-icon  [icon]="weatherIcon"></fa-icon>
+                            </h1>
+                        </div>
+                        <div class="col-4">
+                            <p class="text-center mb-0">Max</p>
+                            <p class="text-center">{{todayWeather.max_temp | number:'1.1-2'}}</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- <div class="row">
+        <div class="col-2" *ngFor="let cWeather of weather.consolidated_weather;">
+            <div class="card shadow-sm border-0" [style.background-color]="'transparent'">
+                <h3 class="text-center">{{cWeather.applicable_date | date: 'dd/MM/yyyy'}}</h3>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <p class="text-center mb-0">Min</p>
+                            <p class="text-center">{{cWeather.min_temp | number:'1.1-2'}}</p>
+                        </div>
+                        <div class="col-4">
+                            <h1 class="text-center">
+                                <fa-icon  [icon]="['fas', 'snowflake']"></fa-icon>
+                            </h1>
+                        </div>
+                        <div class="col-4">
+                            <p class="text-center mb-0">Max</p>
+                            <p class="text-center">{{cWeather.max_temp | number:'1.1-2'}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<!-- <pre>{{weather | json}}</pre> -->

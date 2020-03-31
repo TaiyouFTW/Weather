@@ -4,35 +4,38 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 // Core Folder
 import { ErrorInterceptor } from '@core/interceptors/error.interceptor';
 
 // FontAwesome
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { far } from '@fortawesome/free-regular-svg-icons'; // Regular
-import { fas } from '@fortawesome/free-solid-svg-icons'; // Solid
-
-// Angular material
-// import { MatToolbarModule } from '@angular/material';
+import { faSpinner as faSpinner } from '@fortawesome/free-solid-svg-icons'; // Solid
+import { faSun as faSun } from '@fortawesome/free-solid-svg-icons'; // Solid
+import { faMoon as faMoon } from '@fortawesome/free-solid-svg-icons'; // Solid
 
 // Components
 import { AppComponent } from './app.component';
 import { LoadingComponent } from '@shared/_loading/loading.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './core/header/header.component';;
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoadingComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatToolbarModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
@@ -42,6 +45,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export class AppModule {
   constructor(library: FaIconLibrary) {
-    library.addIconPacks(far, fas);
+    library.addIcons(faSpinner, faSun, faMoon);
   }
 }
