@@ -16,11 +16,14 @@ export class SearchComponent implements OnInit {
   searchFormControl = new FormControl();
   options: City[] = [];
   filteredOptions: Observable<City[]>;
+  submitted: boolean;
 
   constructor(
     private loadingService: LoadingService,
     private weatherService: WeatherService
-  ) { }
+  ) {
+    this.submitted = false;
+  }
 
   ngOnInit() {
     this.getCities();
@@ -63,6 +66,10 @@ export class SearchComponent implements OnInit {
   }
 
   city() {
+    this.submitted = true;
+    if (this.searchFormControl.invalid) {
+      return;
+    }
     this.weatherService.selectedCity(this.searchFormControl.value);
   }
 }

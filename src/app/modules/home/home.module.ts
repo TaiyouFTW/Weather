@@ -19,14 +19,12 @@ import { faCloud as faCloud } from '@fortawesome/free-solid-svg-icons'; // Solid
 import { faCloudSun as faCloudSun } from '@fortawesome/free-solid-svg-icons'; // Solid
 
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home/home.component';
 import { WeatherComponent } from './weather/weather.component';
 import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent,
     WeatherComponent,
     SearchComponent
   ],

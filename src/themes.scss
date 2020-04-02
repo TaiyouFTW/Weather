@@ -25,7 +25,7 @@ $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-
 
 
 $sun-moon-primary: mat-palette($mat-amber);
-$sun-moon-accent: mat-palette($mat-deep-purple, 600);
+$sun-moon-accent: mat-palette($mat-deep-purple, 400, 500, 600);
 $sun-moon-warn: mat-palette($mat-red);
 
 $sun-moon-theme: mat-light-theme($sun-moon-primary, $sun-moon-accent, $sun-moon-warn);
@@ -36,10 +36,10 @@ $sun-moon-theme: mat-light-theme($sun-moon-primary, $sun-moon-accent, $sun-moon-
     $accent: map-get($sun-moon-theme, accent);
 
     .my-sun {
-        color: mat-color($primary, 600) !important;
+        color: mat-color($primary, 400) !important;
     }
     .my-moon {
-        color: mat-color($accent, 600) !important;
+        color: mat-color($accent, 400) !important;
     }
 }
 

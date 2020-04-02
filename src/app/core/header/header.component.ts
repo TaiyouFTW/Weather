@@ -6,12 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  
+
   daynight: string;
   dateNow: Date;
   hour: any;
 
-  constructor() { 
+  constructor() {
     this.daynight = 'sun';
     this.dateNow = new Date();
     this.hour = this.dateNow.getHours();

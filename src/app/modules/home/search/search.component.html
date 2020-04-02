@@ -1,7 +1,7 @@
-<div class="container-fluid mt-3">
+<div class="container container-md-fluid mt-3" >
     <form class="example-form" (ngSubmit)="city()">
         <mat-form-field class="example-full-width" appearance="legacy">
-            <input type="text" placeholder="Selecione uma cidade" matInput [formControl]="searchFormControl" [matAutocomplete]="auto">
+            <input type="text" placeholder="Insira uma cidade" matInput [formControl]="searchFormControl" [matAutocomplete]="auto" [ngClass]="{ 'is-invalid': submitted && searchFormControl.errors }">
             <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="city()">
                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                     {{option.name}}

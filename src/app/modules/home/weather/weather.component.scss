@@ -1,7 +1,28 @@
-.my-card {
-    min-height: 400px;
-    background-image: url('assets/images/clear_weather.jpg');
+.my-background {
+    min-height: 350px;
     background-size: cover;
     background-position: center;
     border-radius: 40px;
+}
+
+.my-background-1 {
+    background-image: url("assets/images/image1.jpg");
+}
+
+.my-font-border {
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.card {
+    position: relative;
+    top: 0;
+    &:hover {
+        top: -4px;
+        box-shadow: 0 4px 4px #999;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+fa-icon {
+    font-size: 2rem;
 }

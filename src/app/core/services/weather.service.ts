@@ -43,7 +43,7 @@ export class WeatherService {
   }
 
   getWeather(woeid: string) {
-    return this.http.get<any>('https://cors-anywhere.herokuapp.com/http://www.metaweather.com/api/location/' + woeid, {headers: this.headers()})
+    return this.http.get<any>('https://cors-anywhere.herokuapp.com/http://www.metaweather.com/api/location/' + woeid, { headers: this.headers() })
       .pipe(map(response => {
         if (response) {
           localStorage.setItem('CurrentWeather', JSON.stringify(response));
