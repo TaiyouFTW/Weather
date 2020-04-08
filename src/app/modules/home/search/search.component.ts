@@ -47,7 +47,6 @@ export class SearchComponent implements OnInit {
 
     const filterValue = value.toLowerCase();
 
-    let teste = this.options.filter(option => option.name.toLowerCase().includes(filterValue));
     return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
@@ -79,7 +78,7 @@ export class SearchComponent implements OnInit {
       this.errorMsg = 'Formulário inválido.';
       return;
     }
-    if (this._filter(this.searchFormControl.value.name).length === 0) {
+    if (this._filter(this.searchFormControl.value).length === 0) {
       this.searchFormControl.setErrors({'error': true});
       this.errorMsg = 'Cidade não encontrada.';
       return;
