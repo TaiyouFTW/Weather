@@ -23,7 +23,7 @@ Install all node_modules packages using:
 npm install
 ```
 
-Search for `mytemplate` and `my-template` to replace the project name
+Search for `weather` and `my-template` to replace the project name
 
 Run
 ```

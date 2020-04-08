@@ -1,5 +1,5 @@
 {
-  "name": "mytemplate",
+  "name": "weather",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "prod": "ng build --prod --base-href https://taiyouftw.github.io/Weather/"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "angular-cli-ghpages": "^0.6.2",
     "bootstrap": "^4.4.1",
     "hammerjs": "^2.0.8",
     "normalize.css": "^8.0.1",
@@ -37,6 +39,7 @@
     "@angular/cli": "~8.3.25",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
+    "@babel/compat-data": "~7.8.0",
     "@types/node": "~8.9.4",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
