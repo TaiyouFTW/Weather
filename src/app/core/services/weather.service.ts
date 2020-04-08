@@ -43,7 +43,7 @@ export class WeatherService {
   }
 
   getWeather(woeid: string) {
-    return this.http.get<any>('https://cors-anywhere.herokuapp.com/http://www.metaweather.com/api/location/' + woeid, { headers: this.headers() })
+    return this.http.get<any>(environment.urlApi + woeid, { headers: this.headers() })
       .pipe(map(response => {
         if (response) {
           localStorage.setItem('CurrentWeather', JSON.stringify(response));
@@ -55,7 +55,7 @@ export class WeatherService {
 
   getCities() {
 
-    return this.http.get<City[]>("/assets/mock/cities.json")
+    return this.http.get<City[]>(environment.cities)
       .pipe(map(response => {
         if (response) {
           return response;

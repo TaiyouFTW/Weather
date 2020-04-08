@@ -1,20 +1,22 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12 col-md-4">
+<div class="container mb-5">
+    <div class="row mt-3">
+        <div class="col-12 col-sm-6 col-md-4">
             <app-search></app-search>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-sm-6 col-md-4">
             <h1 class="text-center mb-0 mt-3">{{weather.title}}</h1>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-4 my-3" *ngFor="let cWeather of weather.consolidated_weather; index as index">
-            <div class="card border-0 my-background" [style.backgroundImage]="'url('+ 'assets/images/image' + (index + 1) +'.jpg' +')'">
-                <p class="text-center font-weight-bold pt-4">{{cWeather.applicable_date | date: 'dd/MM/yyyy'}}</p>
-                <div class="text-center mb-0">
-                    <fa-icon [icon]="iconWeather(cWeather.weather_state_abbr)"></fa-icon>
+        <div class="col-12 col-sm-6 col-md-4 my-3" *ngFor="let cWeather of weather.consolidated_weather; index as index">
+            <div class="card w-100 d-block border-0">
+                <div class="my-background rounded" [style.backgroundImage]="'url('+ 'assets/images/image' + (index + 1) +'.jpg' +')'">
+                    <p class="text-center font-weight-bold pt-3 mb-0">{{cWeather.applicable_date | date: 'dd/MM/yyyy'}}</p>
+                    <div class="text-center mb-0">
+                        <fa-icon [icon]="iconWeather(cWeather.weather_state_abbr)"></fa-icon>
+                    </div>
+                    <h1 class="text-center pl-3 my-font-border" style="font-size: 5rem;">{{cWeather.the_temp | number:'1.0-0'}}º</h1>
                 </div>
-                <h1 class="text-center pt-4 pl-3 my-font-border" style="font-size: 5rem;">{{cWeather.the_temp | number:'1.0-0'}}º</h1>
             </div>
         </div>
     </div>

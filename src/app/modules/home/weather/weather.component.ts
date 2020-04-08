@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { City } from '@shared/models/city';
 import { LoadingService } from '@shared/_loading/loading.service';
 import { WeatherService } from '@core/services/weather.service';
 import { first } from 'rxjs/operators';
@@ -44,11 +43,7 @@ export class WeatherComponent implements OnInit {
   getWeather(woeid: string) {
     this.loadingService.showLoading();
 
-    if (!this.isANewWoeid(woeid) && !this.isDifferentBetweenDates()) {
-      this.weather = this.weatherService.currentWeatherValue;
-      this.loadingService.hideLoading();
-      console.log("from cache");
-    } else {
+    if (this.isANewWoeid(woeid) || this.isDifferentBetweenDates()) {
       console.log("not from cache");
       this.weatherService.getWeather(woeid)
         .pipe(first())
@@ -60,6 +55,10 @@ export class WeatherComponent implements OnInit {
           error => {
             this.loadingService.hideLoading();
           });
+    } else {
+      this.weather = this.weatherService.currentWeatherValue;
+      this.loadingService.hideLoading();
+      console.log("from cache");
     }
   }
 
@@ -69,7 +68,7 @@ export class WeatherComponent implements OnInit {
     if (this.weatherService.currentWeatherValue === null) {
       return true;
     } else {
-      if (woeid !== this.weatherService.currentWeatherValue.woeid.toString()) {
+      if (+woeid !== +this.weatherService.currentWeatherValue.woeid) {
         return true;
       }
     }
@@ -83,8 +82,16 @@ export class WeatherComponent implements OnInit {
       this.weatherDate.setHours(0, 0, 0);
       this.todayDate.setHours(0, 0, 0);
 
-      if (this.todayDate > this.weatherDate) {
+      if (this.todayDate.getDay !== this.weatherDate.getDay) {
         return true;
+      } else {
+        if (this.todayDate.getMonth !== this.weatherDate.getMonth) {
+          return true;
+        } else {
+          if (this.todayDate.getFullYear !== this.weatherDate.getFullYear) { 
+            return true;
+          }
+        }
       }
     }
     return false;

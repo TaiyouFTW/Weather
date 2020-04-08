@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map, first } from 'rxjs/operators';
 import { LoadingService } from '@shared/_loading/loading.service';
@@ -17,15 +17,20 @@ export class SearchComponent implements OnInit {
   options: City[] = [];
   filteredOptions: Observable<City[]>;
   submitted: boolean;
+  errorMsg: string;
+  auxWoeid: string;
 
   constructor(
     private loadingService: LoadingService,
     private weatherService: WeatherService
   ) {
     this.submitted = false;
+    this.errorMsg = '';
+    this.auxWoeid = '';
   }
 
   ngOnInit() {
+    this.searchFormControl = new FormControl('', [Validators.required]);
     this.getCities();
   }
 
@@ -42,6 +47,7 @@ export class SearchComponent implements OnInit {
 
     const filterValue = value.toLowerCase();
 
+    let teste = this.options.filter(option => option.name.toLowerCase().includes(filterValue));
     return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
   }
 
@@ -50,7 +56,7 @@ export class SearchComponent implements OnInit {
   }
 
   getCities() {
-    this.loadingService.showLoading();
+    // this.loadingService.showLoading();
     this.weatherService.getCities()
       .pipe(first())
       .subscribe(
@@ -58,18 +64,31 @@ export class SearchComponent implements OnInit {
           this.options = data;
           this._filtered();
 
-          this.loadingService.hideLoading();
+          // this.loadingService.hideLoading();
         },
         error => {
-          this.loadingService.hideLoading();
+          // this.loadingService.hideLoading();
         });
   }
 
   city() {
     this.submitted = true;
+
     if (this.searchFormControl.invalid) {
+      this.searchFormControl.setErrors({'error': true});
+      this.errorMsg = 'Formulário inválido.';
       return;
     }
+    if (this._filter(this.searchFormControl.value.name).length === 0) {
+      this.searchFormControl.setErrors({'error': true});
+      this.errorMsg = 'Cidade não encontrada.';
+      return;
+    }
+    if (this.searchFormControl.value.woeid == this.auxWoeid) {
+      return;
+    }
+    this.auxWoeid = this.searchFormControl.value.woeid;
     this.weatherService.selectedCity(this.searchFormControl.value);
+    this.submitted = false;
   }
 }

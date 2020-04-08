@@ -1,3 +1,9 @@
-<mat-toolbar color="accent">
-    <fa-icon class="my-{{daynight}}" [icon]="['fas', daynight]"></fa-icon>
-</mat-toolbar>
+<header>
+    <mat-toolbar color="accent">
+        <div class="container-fluid text-center">
+            <a [routerLink]="['/home']"> 
+                <fa-icon class="my-{{daynight}}" [icon]="['fas', daynight]"></fa-icon>
+            </a>
+        </div>
+    </mat-toolbar>
+</header>

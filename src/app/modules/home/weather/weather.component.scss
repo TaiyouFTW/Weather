@@ -1,8 +1,8 @@
 .my-background {
-    min-height: 350px;
+    min-height: 220px;
     background-size: cover;
     background-position: center;
-    border-radius: 40px;
+    // border-radius: 25px;
 }
 
 .my-background-1 {
@@ -13,16 +13,16 @@
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
-.card {
+.card > .my-background {
     position: relative;
     top: 0;
     &:hover {
         top: -4px;
-        box-shadow: 0 4px 4px #999;
+        box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
         transition: all 0.2s ease-in-out;
     }
 }
 
 fa-icon {
-    font-size: 2rem;
+    font-size: 1.3rem;
 }

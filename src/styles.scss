@@ -10,8 +10,11 @@
 // @import "reset";
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "themes";
-@import '~normalize.css';
+@import "~normalize.css";
 
+html, body {
+    height: 100%;
+}
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -24,3 +27,11 @@ body {
 p {
     font-weight: bold;
 }
+
+.wrapper {
+    min-height: calc(100vh - 128px);
+}
+
+// footer, .push {
+//     height: 142px; /* .push must be the same height as .footer */
+// }

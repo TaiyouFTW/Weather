@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  citiesJson: 'http://localhost:4200/src/shared/mocks/cities.json',
-  apiKey: 'INSERT_API_KEY_HERE'
+  urlApi: 'https://cors-anywhere.herokuapp.com/http://www.metaweather.com/api/location/',
+  cities: '/assets/mock/cities.json'
 };
