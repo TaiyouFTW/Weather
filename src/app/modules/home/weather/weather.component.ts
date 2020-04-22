@@ -82,13 +82,13 @@ export class WeatherComponent implements OnInit {
       this.weatherDate.setHours(0, 0, 0);
       this.todayDate.setHours(0, 0, 0);
 
-      if (this.todayDate.getDay !== this.weatherDate.getDay) {
+      if (this.todayDate.getDate() !== this.weatherDate.getDate()) {
         return true;
       } else {
-        if (this.todayDate.getMonth !== this.weatherDate.getMonth) {
+        if (this.todayDate.getMonth() !== this.weatherDate.getMonth()) {
           return true;
         } else {
-          if (this.todayDate.getFullYear !== this.weatherDate.getFullYear) { 
+          if (this.todayDate.getFullYear() !== this.weatherDate.getFullYear()) { 
             return true;
           }
         }

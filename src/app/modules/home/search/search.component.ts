@@ -43,9 +43,14 @@ export class SearchComponent implements OnInit {
       );
   }
 
-  private _filter(value: string): City[] {
+  private _filter(value: any): City[] {
 
-    const filterValue = value.toLowerCase();
+    let filterValue = '';
+    if (value.name != undefined) {
+      filterValue = value.name.toLowerCase();
+    } else {
+      filterValue = value.toLowerCase();
+    }
 
     return this.options.filter(option => option.name.toLowerCase().includes(filterValue));
   }
